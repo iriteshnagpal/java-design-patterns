@@ -3,6 +3,7 @@ node {
     git 'https://github.com/iriteshnagpal/java-design-patterns'
   }
  stage('Compile-package') {
-   sh 'mvn package'
+   def mvnHome = tool name: 'maven-3', type: 'maven'
+   sh "${mvnHome}/bon/mvn package"
  }
 }
